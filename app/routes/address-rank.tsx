@@ -1,9 +1,9 @@
-import { HomeView } from "../views/HomeView";
+import { AddressRankView } from "../views/AddressRankView";
 
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <HomeView />
+      <AddressRankView />
     </div>
   );
 }

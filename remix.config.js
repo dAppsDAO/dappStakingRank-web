@@ -3,8 +3,9 @@
  */
 module.exports = {
   serverBuildTarget: "netlify",
-  server: "./server.js",
-  ignoredRouteFiles: ["**/.*"],
+  // server: "./server.js",
+  cacheDirectory: "./node_modules/.cache/remix",
+  ignoredRouteFiles: [".*", "**/*.css", "**/*.test.{js,jsx,ts,tsx}"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: ".netlify/functions-internal/server.js",
