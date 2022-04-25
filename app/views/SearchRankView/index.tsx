@@ -25,13 +25,40 @@ export const SearchRankView: FC = ({}) => {
       </div>
 
       <div className="text-center pt-2">
-        <div className="hero min-h-16 py-4">
-          <div className="text-center hero-content">
-            <div className="max-w-lg">
-              <h1 className="mb-5 text-2xl font-bold">
-                Ranking by smart contract 📝 on Astar
-              </h1>
-              {/* <p className="mb-5">
+        <div className="text-center hero-content">
+          <div className="max-w-lg">
+            <h1 className="mb-5 text-2xl font-bold">
+              Search Ranking by Address
+            </h1>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Your Address</span>
+              </label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  placeholder="Search address..."
+                  className="input  full input-bordered  w-full "
+                />
+                <button className="btn btn-square">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            {/* <p className="mb-5">
                 This scaffold includes awesome tools for rapid development and
                 deploy dapps to Solana: Next.JS, TypeScript, TailwindCSS, Daisy
                 UI.
@@ -39,90 +66,12 @@ export const SearchRankView: FC = ({}) => {
               <p className="mb-5">
                 Sollana wallet adapter is connected and ready to use.
               </p> */}
-              <p>
-                {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
-              </p>
-            </div>
+            <p>
+              {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
+            </p>
           </div>
         </div>
-        <div className="mb-8 stats stats-vertical lg:stats-horizontal shadow   text-secandary-content">
-          <div className="stat">
-            {/* <div className="stat-title">Total Reward</div>
-            <div className="stat-value">$89,400</div>
-            <div className="stat-actions">
-              <button className="btn btn-sm btn-success">EVM</button>
-            </div> */}
-            <div className="stat-figure text-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-8 h-8 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                ></path>
-              </svg>
-            </div>
-            <div className="stat-title">Total Rewards</div>
-            <div className="stat-value text-secondary">89,400</div>
-            <div className="stat-desc">21% more than last month</div>
-          </div>
 
-          <div className="stat">
-            <div className="stat-figure text-secondary">
-              <div className="stat-figure ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block w-8 h-8 stroke-current"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            <div className="stat-title">Smart Contract Count</div>
-            <div className="stat-value text-secondary">103</div>
-            <div className="stat-desc">3 more than last month</div>
-            {/* <div className="stat-actions">
-              <button className="btn btn-xs">EVM</button>
-              <button className="btn btn-xs">WASM</button>
-            </div> */}
-          </div>
-
-          <div className="stat">
-            <div className="stat-figure text-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block w-8 h-8 stroke-current"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                ></path>
-              </svg>
-            </div>
-            <div className="stat-title">Total Reward count</div>
-            <div className="stat-value">89,200</div>
-            <div className="stat-desc">125 more than last month</div>
-            {/* <div className="stat-actions">
-              <button className="btn btn-sm">depo</button>
-            </div> */}
-          </div>
-        </div>
         <div className="flex flex-col w-full lg:flex-row">
           <table className="m-8 p-8 table table-normal table-zebra">
             <thead>
