@@ -3,7 +3,8 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
       <ul>
-        <li>
+       <li>
+        <button class="btn btn-active btn-secondary">Button</button>
           <a
             target="_blank"
             href="https://remix.run/tutorials/blog"
