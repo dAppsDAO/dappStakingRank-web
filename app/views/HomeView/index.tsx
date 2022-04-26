@@ -1,6 +1,8 @@
 import { Link } from "@remix-run/react";
-import { FC } from "react";
-import { SelectNetWork } from "~/common/SelectNetwork";
+import type { FC } from "react";
+import { Header } from "~/common/Header";
+
+import { Stats } from "./Stats";
 
 export const HomeView: FC = ({}) => {
   // const { publicKey } = useWallet();
@@ -9,42 +11,19 @@ export const HomeView: FC = ({}) => {
 
   return (
     <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
-        <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <span className="text-4xl">🔥</span>
-          </button>
-        </div>
-        <div className="flex-1 px-2 mx-2">
-          <span className="text-lg font-bold">OnFire</span>
-        </div>
-        <div className="flex-none">
-          {/* <WalletMultiButton className="btn btn-ghost" /> */}
-          <SelectNetWork />
-        </div>
-      </div>
-
+      <Header />
       <div className="text-center pt-2">
         <div className="hero min-h-16 py-4">
           <div className="text-center hero-content">
             <div className="max-w-lg">
-              <h1 className="mb-5 text-5xl font-bold">dApp Staking Rank 👑</h1>
-              <p className="mb-5">
-                This scaffold includes awesome tools for rapid development and
-                deploy dapps to Solana: Next.JS, TypeScript, TailwindCSS, Daisy
-                UI.
-              </p>
-              <p className="mb-5">
-                Sollana wallet adapter is connected and ready to use.
-              </p>
-              <p>
-                {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
-              </p>
+              <h1 className="mb-4 text-5xl font-bold">dApp Staking Rank 👑</h1>
+              {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
             </div>
           </div>
         </div>
+        <Stats />
 
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto mt-16">
           <div className="flex flex-col w-full lg:flex-row">
             <div className="card bg-base-100 shadow-xl">
               <figure>

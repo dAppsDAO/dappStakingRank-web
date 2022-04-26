@@ -7,7 +7,7 @@ export const Footer: FC = () => {
     <footer className="footer footer-center p-10 bg-neural text-neutral-content">
       <div className="grid grid-flow-col gap-4">
         <Link to="/contract-rank">Contract rank</Link>
-        <Link to="/address-rank">Wallet addrress rank</Link>
+        <Link to="/address-rank">Addrress rank</Link>
         <Link to="/search-rank">Search rank</Link>
       </div>
       <div>

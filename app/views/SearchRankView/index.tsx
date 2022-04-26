@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import { FC } from "react";
+import { Header } from "~/common/Header";
 import { SelectNetWork } from "~/common/SelectNetwork";
 
 export const SearchRankView: FC = ({}) => {
@@ -9,20 +10,7 @@ export const SearchRankView: FC = ({}) => {
 
   return (
     <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
-        <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <span className="text-4xl">🔥</span>
-          </button>
-        </div>
-        <div className="flex-1 px-2 mx-2">
-          <span className="text-lg font-bold">OnFire</span>
-        </div>
-        <div className="flex-none">
-          <SelectNetWork />
-          {/* <WalletMultiButton className="btn btn-ghost" /> */}
-        </div>
-      </div>
+      <Header />
 
       <div className="text-center pt-2">
         <div className="text-center hero-content">
