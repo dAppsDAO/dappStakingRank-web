@@ -10,7 +10,7 @@ export const HomeView: FC = ({}) => {
   const onClick = () => {};
 
   return (
-    <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
+    <>
       <Header />
       <div className="text-center pt-2">
         <div className="hero min-h-16 py-4">
@@ -79,6 +79,6 @@ export const HomeView: FC = ({}) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
