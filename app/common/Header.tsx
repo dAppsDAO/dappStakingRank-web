@@ -6,7 +6,7 @@ import { SelectNetWork } from "./SelectNetwork";
 export const Header: FC = () => {
   return (
     <>
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
+      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
         <div className="flex-none">
           <Link to="/">
             <button className="btn btn-square btn-ghost">
