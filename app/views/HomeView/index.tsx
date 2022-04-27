@@ -17,6 +17,7 @@ export const HomeView: FC = ({}) => {
           <div className="text-center hero-content">
             <div className="max-w-lg">
               <h1 className="mb-4 text-5xl font-bold">dApp Staking Rank 👑</h1>
+              <p>Exploer dAppStaking data on Astar and Shiden Network</p>
               {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
             </div>
           </div>

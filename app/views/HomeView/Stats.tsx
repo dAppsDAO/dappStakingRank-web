@@ -2,7 +2,7 @@ import { FC } from "react";
 
 export const Stats: FC = () => {
   return (
-    <div className="flex justify-center">
+    <div className="stats stats-vertical lg:stats-horizontal">
       <div className="stat">
         <div className="stat-title">Total dAppStaking Reward</div>
         <div className="stat-value">89,4030</div>
