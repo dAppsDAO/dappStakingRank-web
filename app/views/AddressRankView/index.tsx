@@ -8,7 +8,7 @@ export const AddressRankView: FC = ({}) => {
   const onClick = () => {};
 
   return (
-    <div className="container mx-auto p-8">
+    <>
       <Header />
 
       <div className="pt-8 shadow-xl">
@@ -74,6 +74,6 @@ export const AddressRankView: FC = ({}) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };

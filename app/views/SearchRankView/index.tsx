@@ -9,7 +9,7 @@ export const SearchRankView: FC = ({}) => {
   const onClick = () => {};
 
   return (
-    <div className="container mx-auto max-w-6xl p-8 2xl:px-0">
+    <>
       <Header />
 
       <div className="text-center pt-2">
@@ -105,6 +105,6 @@ export const SearchRankView: FC = ({}) => {
           </table>
         </div>
       </div>
-    </div>
+    </>
   );
 };
