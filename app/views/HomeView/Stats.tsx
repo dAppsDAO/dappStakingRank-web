@@ -1,24 +1,29 @@
-import { FC } from "react";
+import { VFC } from "react";
+import type { HomeStatsData } from "~/types";
 
-export const Stats: FC = () => {
+export const Stats: VFC<{ statsData: HomeStatsData }> = ({ statsData }) => {
   return (
     <div className="stats stats-vertical lg:stats-horizontal">
+      {console.log(statsData)}
       <div className="stat">
         <div className="stat-title">Total dAppStaking Reward</div>
-        <div className="stat-value">89,4030</div>
-        <div className="stat-desc">21% more than last month</div>
+        <div className="stat-value  tabular-nums">
+          {Math.floor(statsData.totalRewards).toLocaleString()} ASTR
+        </div>
       </div>
 
       <div className="stat">
         <div className="stat-title">Total dAppStaking Account</div>
-        <div className="stat-value">89,400</div>
-        <div className="stat-desc">21% more than last month</div>
+        <div className="stat-value">
+          {statsData.totalAccountsCount.toLocaleString()}
+        </div>
       </div>
 
       <div className="stat">
-        <div className="stat-title">Total Rewards </div>
-        <div className="stat-value">1,230</div>
-        <div className="stat-desc">↘︎ 90 (14%)</div>
+        <div className="stat-title">Total Rewards Count</div>
+        <div className="stat-value">
+          {statsData.totalRewardCount.toLocaleString()}
+        </div>
       </div>
     </div>
   );

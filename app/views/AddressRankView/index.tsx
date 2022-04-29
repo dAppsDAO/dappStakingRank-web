@@ -18,7 +18,7 @@ export const AddressRankView: FC = ({}) => {
               <div className="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px">
                 <img
                   src="/tailwind-css-component-profile-5@56w.png"
-                  alt="Avatar Tailwind CSS Component"
+                  alt="Avatar Component"
                   className="mask mask-hexagon"
                 />
               </div>

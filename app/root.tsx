@@ -8,6 +8,11 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { createClient, Provider } from "urql";
+
+const client = createClient({
+  url: "https://api.subquery.network/sq/dappsDAO/astar-dappstaking-rewards__ZGFwc",
+});
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -27,10 +32,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <Provider value={client}>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </Provider>
       </body>
     </html>
   );
