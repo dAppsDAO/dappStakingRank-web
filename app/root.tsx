@@ -11,7 +11,7 @@ import {
 import { createClient, Provider } from "urql";
 
 const client = createClient({
-  url: "https://api.subquery.network/sq/dappsDAO/astar-dappstaking-rewards__ZGFwc",
+  url: "https://api.subquery.network/sq/dappsDAO/astar-dappstaking-rewards",
 });
 
 export function links() {
