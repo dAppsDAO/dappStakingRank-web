@@ -73,8 +73,8 @@ export const HomeView: FC = () => {
                 </label>
               </figure>
               <div className="card-body">
-                <h2 className="card-title">Contract Rank</h2>
-                <p>dAppStaking reward rank of smart contract</p>
+                <h2 className="card-title">dApps Rank</h2>
+                <p>dAppStaking reward ranking of dApp</p>
                 <div className="card-actions justify-end">
                   {/* <Link to="/address-rank"> */}
                   <button className="btn btn-primary btn-disabled">
