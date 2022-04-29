@@ -3050,24 +3050,24 @@ html {
   display: grid;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-16 {
   height: 4rem;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .h-6 {
   height: 1.5rem;
 }
 
-.w-8 {
-  width: 2rem;
-}
-
 .w-16 {
   width: 4rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-72 {
@@ -3150,10 +3150,6 @@ html {
   --tw-bg-opacity: 0.1;
 }
 
-.fill-current {
-  fill: currentColor;
-}
-
 .stroke-current {
   stroke: currentColor;
 }
@@ -3221,8 +3217,8 @@ html {
   line-height: 1;
 }
 
-.text-8xl {
-  font-size: 6rem;
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -3236,6 +3232,11 @@ html {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.tabular-nums {
+  --tw-numeric-spacing: tabular-nums;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
 .text-neutral-content {

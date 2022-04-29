@@ -18,8 +18,8 @@ export const Header: FC = () => {
           <span className="text-lg font-bold">OnFire</span>
         </div>
         <div className="flex-none ">
-          <ConnectWallet />
-          <SelectNetWork />
+          {/* <ConnectWallet />
+          <SelectNetWork /> */}
           {/* <WalletMultiButton className="btn btn-ghost" /> */}
         </div>
       </div>
