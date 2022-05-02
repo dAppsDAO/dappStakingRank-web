@@ -1,10 +1,14 @@
-import { VFC } from "react";
-import type { HomeStatsData } from "~/types";
+import type { VFC } from "react";
+
+type HomeStatsData = {
+  totalRewards: number;
+  totalAccountsCount: number;
+  totalRewardCount: number;
+};
 
 export const Stats: VFC<{ statsData: HomeStatsData }> = ({ statsData }) => {
   return (
     <div className="stats stats-vertical lg:stats-horizontal">
-      {console.log(statsData)}
       <div className="stat">
         <div className="stat-title">Total dAppStaking Reward</div>
         <div className="stat-value  tabular-nums">
