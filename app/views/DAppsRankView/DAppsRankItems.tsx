@@ -1,3 +1,4 @@
+import { Link } from "@remix-run/react";
 import type { VFC } from "react";
 import type { dAppType } from "../../constants/dApp";
 import { dApps } from "../../constants/dApp";
@@ -8,7 +9,7 @@ type DAppItemType = {
   rewards: any;
 };
 
-const DAppItem: VFC<{ item: DAppItemType; rank: number }> = ({
+const DAppsRankRow: VFC<{ item: DAppItemType; rank: number }> = ({
   item,
   rank,
 }) => {
@@ -22,12 +23,17 @@ const DAppItem: VFC<{ item: DAppItemType; rank: number }> = ({
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-6 h-6">
-              <img src={dApp?.imageURL} alt={dApp?.name + "image"} />
+              <img
+                className="lazyload"
+                width={24}
+                height={24}
+                src={dApp?.imageURL}
+                alt={dApp?.name + "image"}
+              />
             </div>
           </div>
           <div>
             <div className="font-bold">{dApp?.name}</div>
-            {/* <div className="text-sm opacity-50">{item.id}</div> */}
             <div className="text-sm opacity-50">
               {item.id.substring(0, 6) + "..." + item.id.substring(-6, 5)}
             </div>
@@ -37,7 +43,9 @@ const DAppItem: VFC<{ item: DAppItemType; rank: number }> = ({
       <td>{Math.floor(item.totalReward)}</td>
       <td>{item.rewards.totalCount}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link to={"/dapp/" + item.id}>
+          <button className="btn btn-secondary btn-xs">details</button>
+        </Link>
       </th>
     </tr>
   );
@@ -46,7 +54,6 @@ const DAppItem: VFC<{ item: DAppItemType; rank: number }> = ({
 export const DAppsRankItems = (data: any) => {
   return (
     <div className="overflow-x-auto w-full">
-      {console.log(data)}
       <table className="table table-compact w-full">
         <thead>
           <tr>
@@ -59,7 +66,7 @@ export const DAppsRankItems = (data: any) => {
         </thead>
         <tbody>
           {data.contracts.map((item: DAppItemType, index: number) => {
-            return <DAppItem key={item.id} item={item} rank={index + 1} />;
+            return <DAppsRankRow key={item.id} item={item} rank={index + 1} />;
           })}
         </tbody>
 

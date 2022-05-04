@@ -28,25 +28,29 @@ export const DAppsRankView: FC = ({}) => {
   });
 
   const { data, fetching, error } = result;
-  if (fetching) return <p>Loading...</p>;
   if (error) return <p>Oh no... {error.message}</p>;
 
   return (
     <>
-      <Header />
-
       <div className="text-center pt-2">
-        <div className="hero min-h-16 py-4">
-          <div className="text-center hero-content">
-            <div className="max-w-lg">
-              <h1 className="mb-5 text-2xl font-bold">dApp Ranking 📝</h1>
+        {fetching ? (
+          <button className="btn loading btn-lg btn-ghost">loading</button>
+        ) : (
+          <>
+            <div className="hero min-h-16 py-4">
+              <div className="text-center hero-content">
+                <div className="max-w-lg">
+                  <h1 className="mb-5 text-2xl font-bold">dApp Ranking 📝</h1>
+                </div>
+              </div>
+              <p className="mt-16">Ranking of dappStking rewards</p>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="m-8">
-        <DAppsRankItems contracts={data.contracts.nodes} />
+            <div className="m-8">
+              <DAppsRankItems contracts={data.contracts.nodes} />
+            </div>
+          </>
+        )}
       </div>
     </>
   );
