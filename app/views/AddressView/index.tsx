@@ -24,7 +24,6 @@ export const AddressView: FC = () => {
   const location = useLocation();
   const Address = location.pathname.substring(9, location.pathname.length);
 
-  console.log(Address);
   const [result] = useQuery({
     query: DAppsRankQUery,
     variables: { id: Address },
@@ -47,7 +46,6 @@ export const AddressView: FC = () => {
         <button className="btn loading btn-lg btn-ghost">loading</button>
       ) : (
         <>
-          {console.log(data)}
           <div className="hero min-h-16 py-4">
             <div className="hero-content">
               <div className="max-w-lg">
