@@ -89,7 +89,7 @@ export const AddressView: FC = () => {
 
           <div className="border-base-300 bg-base-200 p-8">
             <div className="text-2xl font-bold border-base-300">
-              LatestdApp Staking Reward
+              Latest dApp Staking Reward
             </div>
             <p>Maximum data is 100</p>
             <div className="flex  border-base-300 min-h-[6rem] min-w-[9rem]  flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-2">
