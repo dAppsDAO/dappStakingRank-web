@@ -3,10 +3,6 @@ import { FC } from "react";
 import { Header } from "~/common/Header";
 
 export const AddressRankView: FC = ({}) => {
-  // const { publicKey } = useWallet();
-
-  const onClick = () => {};
-
   return (
     <>
       <Header />
