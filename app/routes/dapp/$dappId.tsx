@@ -1,6 +1,6 @@
 import { Footer } from "~/common/Footer";
 import { Header } from "~/common/Header";
-import { DAppView } from "~/views/DappView";
+import { DAppView } from "~/views/DAppView";
 
 export default function Index() {
   return (
