@@ -1,8 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { FC } from "react";
 import { useQuery } from "urql";
-import { Header } from "~/common/Header";
-import type { HomeStatsData } from "~/types";
 
 import { Stats } from "./Stats";
 
@@ -30,7 +28,12 @@ export const HomeView: FC = () => {
 
   const { data, fetching, error } = result;
 
-  if (fetching) return <p>Loading...</p>;
+  if (fetching)
+    return (
+      <div className="text-center pt-2 ">
+        <button className="btn loading btn-lg btn-ghost">loading</button>
+      </div>
+    );
   if (error) return <p>Oh no... {error.message}</p>;
 
   class rewardsCollection extends Array {
@@ -41,7 +44,7 @@ export const HomeView: FC = () => {
 
   const contractsData = new rewardsCollection(...data.contracts.nodes);
   const sumContractValue = contractsData.sum("totalReward");
-  const statsData: HomeStatsData = {
+  const statsData = {
     totalAccountsCount: data.accounts.totalAccountsCount,
     totalRewards: sumContractValue,
     totalRewardCount: data.dAppStakingRewards.totalRewardCount,
@@ -49,7 +52,6 @@ export const HomeView: FC = () => {
 
   return (
     <>
-      <Header />
       <div className="text-center pt-2">
         <div className="hero min-h-16 py-4">
           <div className="text-center hero-content">
