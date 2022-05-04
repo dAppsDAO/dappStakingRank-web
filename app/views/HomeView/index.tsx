@@ -54,9 +54,9 @@ export const HomeView: FC = () => {
     <>
       <div className="text-center pt-2">
         <div className="hero min-h-16 py-4">
-          <div className="text-center hero-content">
+          <div className="hero-content">
             <div className="max-w-lg">
-              <h1 className="mb-4 text-5xl font-bold">dApp Staking Rank 👑</h1>
+              <h1 className="mb-4 text-4xl font-bold">dApp Staking Rank 👑</h1>
               <p>
                 Exploer dAppStaking reward datas on Astar and Shiden Network
               </p>
