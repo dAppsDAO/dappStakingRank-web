@@ -20,7 +20,7 @@ const DAppsRankRow: VFC<{ item: DAppItemType; rank: number }> = ({
     <tr>
       <th>{rank}</th>
       <td>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2">
           <div className="avatar">
             <div className="mask mask-squircle w-6 h-6">
               <img
@@ -33,10 +33,12 @@ const DAppsRankRow: VFC<{ item: DAppItemType; rank: number }> = ({
             </div>
           </div>
           <div>
-            <div className="font-bold">{dApp?.name}</div>
-            <div className="text-sm opacity-50">
-              {item.id.substring(0, 6) + "..." + item.id.substring(-6, 5)}
-            </div>
+            <Link to={"/dapp/" + item.id}>
+              <div className="font-bold">{dApp?.name}</div>
+              <div className="text-sm opacity-50">
+                {item.id.substring(0, 6) + "..." + item.id.substring(-6, 5)}
+              </div>
+            </Link>
           </div>
         </div>
       </td>
