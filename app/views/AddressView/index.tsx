@@ -3,9 +3,12 @@ import { useQuery } from "urql";
 import { useLocation } from "react-router-dom";
 import type { dAppType } from "~/constants/dApp";
 import { dApps } from "~/constants/dApp";
-// import { DAppAnalytics } from "./DAppAnalytics";
+import { FiExternalLink } from "react-icons/fi";
+import dayjs from "dayjs";
 
-const DAppsRankQUery = `
+dayjs().format();
+
+const AddressQUery = `
   query($id:String!) {
     account(id:$id){
         totalRewarded	
@@ -14,7 +17,7 @@ const DAppsRankQUery = `
                 reward
                 eraIndex
                 contractId
-                timestamp
+                date:timestamp # ISO string
             }
         }
     }
@@ -25,7 +28,7 @@ export const AddressView: FC = () => {
   const Address = location.pathname.substring(9, location.pathname.length);
 
   const [result] = useQuery({
-    query: DAppsRankQUery,
+    query: AddressQUery,
     variables: { id: Address },
   });
   const { data, fetching, error } = result;
@@ -49,13 +52,18 @@ export const AddressView: FC = () => {
           <div className="hero min-h-16 py-4">
             <div className="hero-content">
               <div className="max-w-lg">
-                <h1 className="text-3xl font-bold mb-4">
+                <h1 className="text-2xl font-bold mb-4">
                   dappStking rewards history
                 </h1>
-                <div>
-                  <div className="font-bold ">Address:</div>
-                  {Address}
-                </div>
+                <p className="text-xs">
+                  Address:
+                  <br /> {Address}
+                </p>
+                <a href={"https://astar.subscan.io/account/" + Address}>
+                  <button className="btn btn-xs btn-link  gap-2 m-2">
+                    <FiExternalLink className="w-4 h-4" /> Subscan
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -84,7 +92,7 @@ export const AddressView: FC = () => {
               LatestdApp Staking Reward
             </div>
             <p>Maximum data is 100</p>
-            <div className="flex  border-base-300 min-h-[6rem] min-w-[18rem]  flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4">
+            <div className="flex  border-base-300 min-h-[6rem] min-w-[9rem]  flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-2">
               {data?.account.rewards.nodes.map(
                 //todo : specify account type from schema
                 (account: any, index: number) => {
@@ -93,7 +101,7 @@ export const AddressView: FC = () => {
                   });
 
                   return (
-                    <div key={index} className="card w-96 bg-base-100 m-8">
+                    <div key={index} className="card w-60 bg-base-100 m-2">
                       <div className="card-body">
                         <div className="card-body items-center text-center">
                           <div className="avatar">
@@ -113,9 +121,10 @@ export const AddressView: FC = () => {
                           </h2>
                         </div>
                         <p>ERA: {account.eraIndex}</p>
-                        <p>DATE: {account.timestamp}</p>
+                        <p>{dayjs(account.date).format("YYYY-MM-DD")}</p>
+                        <p>{dayjs(account.date).format("HH:mm:ss Z")}</p>
 
-                        <div className="m-4 text-2xl font-bold text-primary">
+                        <div className="m-2 text-2xl font-bold text-primary">
                           {Math.floor(account.reward).toLocaleString()} ASTR
                         </div>
                       </div>

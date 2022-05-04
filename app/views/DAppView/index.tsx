@@ -54,9 +54,9 @@ export const DAppView: FC = () => {
               </div>
             </div>
           </div>
-          <p>TOP 100 of dappStking rewards on {dApp?.name}</p>
+          <p className="m-2">TOP 100 of dappStking rewards on {dApp?.name}</p>
 
-          <div className="m-8">
+          <div className="m-2">
             {data?.contract && (
               <DAppAnalytics
                 rewards={data.contract.rewards}

@@ -40,13 +40,13 @@ export const DAppsRankView: FC = ({}) => {
             <div className="hero min-h-16 py-4">
               <div className="text-center hero-content">
                 <div className="max-w-lg">
-                  <h1 className="mb-5 text-2xl font-bold">dApp Ranking 📝</h1>
+                  <h1 className="mb-4 text-2xl font-bold">dApp Ranking 📝</h1>
                 </div>
               </div>
               <p className="mt-16">Ranking of dappStking rewards</p>
             </div>
 
-            <div className="m-8">
+            <div className="m-2">
               <DAppsRankItems contracts={data.contracts.nodes} />
             </div>
           </>
