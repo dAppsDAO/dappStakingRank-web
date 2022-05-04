@@ -38,8 +38,6 @@ export const DAppAnalytics: VFC<DAppAnalyticsProps> = ({
   rewards,
   totalReward,
 }) => {
-  console.log(rewards, totalReward);
-
   return (
     <>
       <div className="stats stats-vertical lg:stats-horizontal pb-8">
