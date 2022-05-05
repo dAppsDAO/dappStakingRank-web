@@ -1,17 +1,10 @@
 import { Link } from "@remix-run/react";
 import { FC } from "react";
-import { Header } from "~/common/Header";
-import { SelectNetWork } from "~/common/SelectNetwork";
 
-export const SearchRankView: FC = ({}) => {
-  // const { publicKey } = useWallet();
-
-  const onClick = () => {};
-
+export const SearchRankView: FC = () => {
   return (
     <>
-      <Header />
-
+      <button className="btn btn-block">block</button>
       <div className="text-center pt-2">
         <div className="text-center hero-content">
           <div className="max-w-lg">
@@ -22,11 +15,11 @@ export const SearchRankView: FC = ({}) => {
               <label className="label">
                 <span className="label-text">Your Address</span>
               </label>
-              <div className="input-group">
+              <div className="input-group full">
                 <input
                   type="text"
                   placeholder="Search address..."
-                  className="input  full input-bordered  w-full "
+                  className="input full input-bordered  w-full "
                 />
                 <button className="btn btn-square">
                   <svg
