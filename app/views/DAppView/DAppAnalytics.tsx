@@ -1,7 +1,6 @@
 import { Link } from "@remix-run/react";
-import type { FC, VFC } from "react";
-import type { dAppType } from "../../constants/dApp";
-import { dApps } from "../../constants/dApp";
+import type { VFC } from "react";
+import { FaLink } from "react-icons/fa";
 
 const DAppAnalyticsRow: VFC<{ reward: any; rank: number }> = ({
   reward,
@@ -13,7 +12,14 @@ const DAppAnalyticsRow: VFC<{ reward: any; rank: number }> = ({
       <td>
         <div className="flex items-center space-x-3">
           <div>
-            <div className="text-xs">{reward.account.id}</div>
+            <Link to={"/address/" + reward.account.id}>
+              <div className="text-xs">
+                {reward.account.id.substring(0, 6) +
+                  "..." +
+                  reward.account.id.substring(-6, 5)}
+              </div>
+              <FaLink />
+            </Link>
           </div>
         </div>
       </td>
@@ -38,8 +44,6 @@ export const DAppAnalytics: VFC<DAppAnalyticsProps> = ({
   rewards,
   totalReward,
 }) => {
-  console.log(rewards, totalReward);
-
   return (
     <>
       <div className="stats stats-vertical lg:stats-horizontal pb-8">

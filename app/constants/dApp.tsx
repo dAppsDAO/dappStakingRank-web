@@ -6,6 +6,12 @@ export type dAppType = {
 
 export const dApps: dAppType[] = [
   {
+    address: "0xcdb32eed99aa19d39e5d6ec45ba74dc4afec549f",
+    name: "Orcus Finance",
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/astarnetwork-a4924.appspot.com/o/astar-dapps%2F0xCdB32eEd99AA19D39e5d6EC45ba74dC4afeC549F_10%20(2).png?alt=media&token=56bf74f0-7a2b-4791-b3c3-9bd0486ebc28",
+  },
+  {
     address: "0xaab44542c72f88f7b98fffda418e3efe94bc13af",
     name: "Astar Farm alpha version",
     imageURL:
