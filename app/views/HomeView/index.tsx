@@ -66,7 +66,7 @@ export const HomeView: FC = () => {
         </div>
         <Stats statsData={statsData} />
 
-        <div className="max-w-6xl mx-auto mt-16">
+        <div className="max-w-2xl mx-auto mt-16">
           <div className="flex flex-col lg:flex-row m-8">
             <div className="card bg-base-100 shadow-xl">
               <figure>
@@ -75,7 +75,7 @@ export const HomeView: FC = () => {
                 </label>
               </figure>
               <div className="card-body">
-                <h2 className="card-title">dApps Rank</h2>
+                <h2 className="card-title">dApp Rank</h2>
                 <p>dAppStaking reward ranking of dApp</p>
                 <div className="card-actions justify-end">
                   <Link to="/dapps-rank">
@@ -95,30 +95,9 @@ export const HomeView: FC = () => {
                 <h2 className="card-title">Address Rank</h2>
                 <p>dAppStaking ranking of wallet address</p>
                 <div className="card-actions justify-end">
-                  {/* <Link to="/contract-rank"> */}
-                  <button className="btn btn-primary btn-disabled">
-                    Comming Soon
-                  </button>
-                  {/* </Link> */}
-                </div>
-              </div>
-            </div>
-            <div className="divider lg:divider-horizontal">OR</div>
-            <div className="card bg-base-100 shadow-xl">
-              <figure>
-                <label className="text-6xl">
-                  <div className="swap-on">🔍</div>
-                </label>
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Search Rank</h2>
-                <p>Search dAppStaking reward ranking from a address</p>
-                <div className="card-actions justify-end">
-                  {/* <Link to="/contract-rank"> */}
-                  <button className="btn btn-primary btn-disabled">
-                    Comming Soon
-                  </button>
-                  {/* </Link> */}
+                  <Link to="/address-rank">
+                    <button className="btn btn-primary">Check</button>
+                  </Link>
                 </div>
               </div>
             </div>
