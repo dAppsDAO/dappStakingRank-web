@@ -33,16 +33,8 @@ export const AddressView: FC = () => {
   });
   const { data, fetching, error } = result;
 
-  // let total = data?.account.rewards?.nodes.reduce(function (
-  //   sum: number,
-  //   element: any
-  // ) {
-  //   return sum + element.reward;
-  // },
-  // 0);
-
   if (error) return <p>Oh no... {error.message}</p>;
-  //console.log("fetched data.account.reward total: " + total);
+
   return (
     <div className="text-center pt-2">
       {fetching ? (
@@ -137,7 +129,7 @@ export const AddressView: FC = () => {
                             <p>{dayjs(account.date).format("YYYY-MM-DD")}</p>
                             <p>{dayjs(account.date).format("HH:mm:ss Z")}</p>
 
-                            <div className="m-2 text-2xl font-bold text-primary">
+                            <div className="m-2 text-xl font-bold text-primary">
                               {account.reward.toLocaleString()} ASTR
                             </div>
                           </div>

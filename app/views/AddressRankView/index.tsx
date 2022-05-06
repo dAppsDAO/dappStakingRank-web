@@ -1,28 +1,24 @@
 import type { FC } from "react";
 import { useQuery } from "urql";
+import { AddressRankItems } from "./AddressRankItems";
 // import { DAppsRankItems } from "./DAppsRankItems";
 
 const AddressRankQUery = `
   query {
-  contracts(orderBy:TOTAL_REWARD_DESC){
-    totalCount
-      nodes{
-        id
-        totalReward
-        rewards{
-          totalCount
-          nodes{
-            eraIndex
-            reward
-            timestamp
+      accounts (first: 100,orderBy:TOTAL_REWARDED_DESC) {
+              totalCount
+              nodes {
+                  id
+                  totalRewarded
+                rewards{
+                  totalCount
+                }
+              }
           }
-        }
-      }
-    }
   }
 `;
-export const AddressRankView: FC = ({}) => {
-  const [result, _] = useQuery({
+export const AddressRankView: FC = () => {
+  const [result] = useQuery({
     query: AddressRankQUery,
   });
 
@@ -47,9 +43,9 @@ export const AddressRankView: FC = ({}) => {
               <p className="mt-16">Ranking of dappStking rewards</p>
             </div>
 
-            {/* <div className="m-2">
-              <DAppsRankItems contracts={data.contracts.nodes} />
-            </div> */}
+            <div className="m-2">
+              <AddressRankItems accounts={data.accounts.nodes} />
+            </div>
           </>
         )}
       </div>
