@@ -1,9 +1,16 @@
 import { Link } from "@remix-run/react";
-import type { FC } from "react";
+import { FC, useState } from "react";
 // import { ConnectWallet } from "./ConnectWallet";
 // import { SelectNetWork } from "./SelectNetwork";
 
 export const Header: FC = () => {
+  const [inputAddressValue, setInputAddressValue] = useState("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputAddressValue(e.target.value);
+  };
+  const searchHandler = () => {
+    window.location.href = "/address/" + inputAddressValue;
+  };
   return (
     <>
       <div className="navbar bg-base-300 mb-2 shadow-lg bg-neutral text-neutral-content">
@@ -17,16 +24,21 @@ export const Header: FC = () => {
             </div>
           </Link>
         </div>
+        {/* <div className="navbar-center">
+          <button className="btn btn-sm btn-secondary">👛 Connect</button>
+        </div> */}
 
         <div className="navbar-end form-control">
-          <div className="form-control w-full">
-            <div className="input-group full input-group-sm">
+          <div className="form-control">
+            <div className="input-group input-group-sm">
               <input
                 type="text"
-                placeholder="Search Addrerss…"
-                className="input input-bordered full w-full input-sm"
+                placeholder="Address…"
+                className="input input-bordered input-sm"
+                value={inputAddressValue}
+                onChange={(event) => handleChange(event)}
               />
-              <button className="btn btn-square btn-sm">
+              <button className="btn btn-square btn-sm" onClick={searchHandler}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
