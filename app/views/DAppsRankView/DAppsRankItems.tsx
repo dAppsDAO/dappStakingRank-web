@@ -42,7 +42,12 @@ const DAppsRankRow: VFC<{ item: DAppItemType; rank: number }> = ({
           </div>
         </div>
       </td>
-      <td>{Math.floor(item.totalReward)}</td>
+      {/* [TMP] Apply one-third to total rewards #2 */}
+      <td>
+        {(
+          Math.round((Number(item.totalReward) / 3) * 100) / 100
+        ).toLocaleString()}
+      </td>
       <td>{item.rewards.totalCount}</td>
       <th>
         <Link to={"/dapp/" + item.id}>

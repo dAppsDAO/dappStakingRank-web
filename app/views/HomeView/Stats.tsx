@@ -12,7 +12,11 @@ export const Stats: VFC<{ statsData: HomeStatsData }> = ({ statsData }) => {
       <div className="stat">
         <div className="stat-title">Total dAppStaking Reward</div>
         <div className="stat-value  tabular-nums">
-          {Math.floor(statsData.totalRewards).toLocaleString()} ASTR
+          {/* [TMP] Apply one-third to total rewards #2 */}
+          {(
+            Math.round((Number(statsData.totalRewards) / 3) * 100) / 100
+          ).toLocaleString()}{" "}
+          ASTR
         </div>
       </div>
 
