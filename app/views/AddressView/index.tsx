@@ -71,7 +71,12 @@ export const AddressView: FC = () => {
             <div className="stat">
               <div className="stat-title">Total Reward</div>
               <div className="stat-value  tabular-nums">
-                {Math.floor(data.account.totalRewarded).toLocaleString()} ASTR
+                {/* [TMP] Apply one-third to total rewards #2 */}
+                {(
+                  Math.round((Number(data.account.totalRewarded) / 3) * 100) /
+                  100
+                ).toLocaleString()}{" "}
+                ASTR
               </div>
             </div>
             <div className="stat">
@@ -125,7 +130,7 @@ export const AddressView: FC = () => {
                         <p>{dayjs(account.date).format("HH:mm:ss Z")}</p>
 
                         <div className="m-2 text-2xl font-bold text-primary">
-                          {Math.floor(account.reward).toLocaleString()} ASTR
+                          {account.reward.toLocaleString()} ASTR
                         </div>
                       </div>
                     </div>
