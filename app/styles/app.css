@@ -2015,6 +2015,10 @@ html {
   justify-content: flex-start;
 }
 
+.navbar-center {
+  flex-shrink: 0;
+}
+
 .navbar-end {
   width: 50%;
   justify-content: flex-end;
@@ -2496,13 +2500,6 @@ html {
   outline: 2px solid currentColor;
 }
 
-.label-text {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  --tw-text-opacity: 1;
-  color: hsl(var(--bc) / var(--tw-text-opacity));
-}
-
 .label a:hover {
   --tw-text-opacity: 1;
   color: hsl(var(--bc) / var(--tw-text-opacity));
@@ -2729,11 +2726,6 @@ html {
   background-color: hsl(var(--b1) / var(--tw-bg-opacity));
 }
 
-.table-zebra tbody tr:nth-child(even) th, .table-zebra tbody tr:nth-child(even) td {
-  --tw-bg-opacity: 1;
-  background-color: hsl(var(--b2, var(--b1)) / var(--tw-bg-opacity));
-}
-
 .min-h-16 {
   min-height: 4rem;
 }
@@ -2760,10 +2752,6 @@ html {
   padding-right: 1.5rem;
   min-height: 4rem;
   font-size: 1.125rem;
-}
-
-.btn-block {
-  width: 100%;
 }
 
 .btn-square:where(.btn-xs) {
@@ -2896,12 +2884,6 @@ html {
   overflow-y: auto;
 }
 
-.table-normal :where(th, td) {
-  padding: 1rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .table-compact :where(th, td) {
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -2940,14 +2922,6 @@ html {
 
 .mt-16 {
   margin-top: 4rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.block {
-  display: block;
 }
 
 .flex {
@@ -2994,10 +2968,6 @@ html {
   width: 2rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-4 {
   width: 1rem;
 }
@@ -3008,6 +2978,10 @@ html {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-6 {
