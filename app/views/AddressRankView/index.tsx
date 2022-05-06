@@ -1,74 +1,53 @@
-import { Link } from "@remix-run/react";
-import { FC } from "react";
-import { Header } from "~/common/Header";
+import type { FC } from "react";
+import { useQuery } from "urql";
+import { AddressRankItems } from "./AddressRankItems";
+// import { DAppsRankItems } from "./DAppsRankItems";
 
-export const AddressRankView: FC = ({}) => {
+const AddressRankQUery = `
+  query {
+      accounts (first: 100,orderBy:TOTAL_REWARDED_DESC) {
+              totalCount
+              nodes {
+                  id
+                  totalRewarded
+                rewards{
+                  totalCount
+                }
+              }
+          }
+  }
+`;
+export const AddressRankView: FC = () => {
+  const [result] = useQuery({
+    query: AddressRankQUery,
+  });
+
+  const { data, fetching, error } = result;
+  if (error) return <p>Oh no... {error.message}</p>;
+
   return (
     <>
-      <Header />
-
-      <div className="pt-8 shadow-xl">
-        <div className="flex items-center pb-4">
-          <div className="dropdown">
-            <div className="online avatar">
-              <div className="mask mask-hexagon bg-base-content h-16 w-16 bg-opacity-10 p-px">
-                <img
-                  src="/tailwind-css-component-profile-5@56w.png"
-                  alt="Avatar Component"
-                  className="mask mask-hexagon"
-                />
-              </div>
-            </div>
-
-            <div className="dropdown-content py-2">
-              <div className="card compact bg-neutral-focus text-neutral-content rounded-box w-72 shadow-xl">
-                <div className="card-body">
-                  <h2 className="card-title font-extrabold capitalize">
-                    avatar component
-                  </h2>
-                  <p className="text-neutral-content text-sm text-opacity-80">
-                    Use avatar component with any size
-                  </p>
-                  <div className="mt-4 flex justify-end">
-                    <a
-                      href="/components/avatar"
-                      className="btn btn-primary btn-sm xl:btn-md"
-                    >
-                      See component
-                    </a>
-                  </div>
+      <div className="text-center pt-2">
+        {fetching ? (
+          <button className="btn loading btn-lg btn-ghost">loading</button>
+        ) : (
+          <>
+            <div className="hero min-h-16 py-4">
+              <div className="text-center hero-content">
+                <div className="max-w-lg">
+                  <h1 className="mb-4 text-2xl font-bold">
+                    Address Ranking 📝
+                  </h1>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="ml-4">
-            <div className="text-md  whitespace-normal">
-              Zkaay4r6sUZT1u6XKKhi8JHiyJB4YgvZMbYUzsZQYkGdoA4n
-            </div>
-            <div className="text-base-content/70 text-sm">
-              Balance 1,748.1528064958462153 ASTR
-            </div>
-          </div>
-        </div>
-        <div className="text-lg font-extrabold">dAppStaking Report</div>
-        <div className="text-center pt-2">
-          <div className="stats stats-vertical lg:stats-horizontal">
-            <div className="stat">
-              <div className="stat-title">Rewards</div>
-              <div className="stat-value">31,020,220 ASTAR</div>
+              <p className="mt-16">Ranking of dappStking rewards</p>
             </div>
 
-            <div className="stat">
-              <div className="stat-title">RewardsCount</div>
-              <div className="stat-value">42</div>
+            <div className="m-2">
+              <AddressRankItems accounts={data.accounts.nodes} />
             </div>
-
-            <div className="stat">
-              <div className="stat-title">FromContracts</div>
-              <div className="stat-value">13</div>
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </>
   );

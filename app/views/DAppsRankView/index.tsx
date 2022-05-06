@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import { useQuery } from "urql";
-import { Header } from "~/common/Header";
 import { DAppsRankItems } from "./DAppsRankItems";
 
 const DAppsRankQUery = `

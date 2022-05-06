@@ -23,7 +23,8 @@ const DAppAnalyticsRow: VFC<{ reward: any; rank: number }> = ({
           </div>
         </div>
       </td>
-      <td>{Math.floor(reward.reward)}</td>
+
+      <td>{Math.round(Number(reward.reward) * 100) / 100}</td>
       <td>{Math.floor(reward.eraIndex)}</td>
       <th>
         <Link to={"/address/" + reward.account.id}>
@@ -50,7 +51,11 @@ export const DAppAnalytics: VFC<DAppAnalyticsProps> = ({
         <div className="stat">
           <div className="stat-title">Total Reward</div>
           <div className="stat-value  tabular-nums">
-            {Math.floor(totalReward).toLocaleString()} ASTR
+            {/* [TMP] Apply one-third to total rewards #2 */}
+            {(
+              Math.round((Number(totalReward) / 3) * 100) / 100
+            ).toLocaleString()}{" "}
+            ASTR
           </div>
         </div>
         <div className="stat">
