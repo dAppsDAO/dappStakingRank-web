@@ -13,7 +13,7 @@ export const Header: FC = () => {
               <button className="btn btn-square btn-ghost">
                 <span className="text-xl">🔥</span>
               </button>
-              <span className="text-lg font-bold mt-3">Astar Rewards</span>
+              <span className="text-lg font-bold mt-3">OnFire dAppStaking</span>
             </div>
           </Link>
         </div>
