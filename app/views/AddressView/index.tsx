@@ -47,7 +47,7 @@ export const AddressView: FC = () => {
                 <h1 className="text-2xl font-bold mb-4">
                   dAppStking rewards details
                 </h1>
-                <p className="text-sm">
+                <p className="text-xs">
                   Address:
                   <br /> {Address}
                 </p>
