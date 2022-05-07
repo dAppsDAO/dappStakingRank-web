@@ -1,5 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { FC } from "react";
+import { useState } from "react";
 import { useQuery } from "urql";
 
 import { Stats } from "./Stats";
@@ -20,8 +21,13 @@ const HomeQuery = `
   }
 `;
 export const HomeView: FC = () => {
-  // const { publicKey } = useWallet();
-
+  const [inputAddressValue, setInputAddressValue] = useState("");
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputAddressValue(e.target.value);
+  };
+  const searchHandler = () => {
+    window.location.href = "/address/" + inputAddressValue;
+  };
   const [result, _] = useQuery({
     query: HomeQuery,
   });
@@ -52,18 +58,54 @@ export const HomeView: FC = () => {
 
   return (
     <>
-      <div className="text-center pt-2">
-        <div className="hero min-h-16 py-4">
-          <div className="hero-content">
-            <div className="max-w-lg">
-              <h1 className="mb-4 text-2xl font-bold">
-                dApp Staking Rewards Analytics📊
+      <div className="text-center">
+        <div className="hero p-8 bg-base-200">
+          <div className="hero-content text-center">
+            <div className="max-w-md">
+              <div className="m-4">
+                <span className="text-6xl">🔥</span>
+              </div>
+              <h1 className="text-4xl font-extrabold">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                  OnFire dAppStaking
+                </span>
               </h1>
-              <p>Exploer dAppStaking reward datas on Astar</p>
-              {/* {publicKey ? <>Your address: {publicKey.toBase58()}</> : null} */}
+              <p className="py-6">
+                Exploer dAppStaking datas on Astar network.
+              </p>
+              {!inputAddressValue.length ? (
+                <>
+                  <input
+                    type="text"
+                    placeholder="Search Address..."
+                    className="input input-bordered input-md w-full max-w-xs"
+                    value={inputAddressValue}
+                    onChange={(event) => handleChange(event)}
+                  />
+                </>
+              ) : (
+                <>
+                  <label className="input-group input-group-md">
+                    <input
+                      type="text"
+                      placeholder="Search Address..."
+                      className="input input-bordered input-md w-full max-w-xs"
+                      value={inputAddressValue}
+                      onChange={(event) => handleChange(event)}
+                    />
+                    <button
+                      className="btn btn-primary btn-md"
+                      onClick={searchHandler}
+                    >
+                      Search
+                    </button>
+                  </label>
+                </>
+              )}
             </div>
           </div>
         </div>
+
         <Stats statsData={statsData} />
 
         <div className="max-w-2xl mx-auto mt-16">

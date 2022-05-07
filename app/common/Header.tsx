@@ -14,14 +14,13 @@ export const Header: FC = () => {
   };
   return (
     <>
-      <div className="navbar bg-base-300 mb-2 shadow-lg bg-neutral text-neutral-content">
+      <div className="navbar bg-base-300 shadow-lg bg-neutral text-neutral-content">
         <div className="navbar-start">
           <Link to="/">
             <div className="flex-1">
               <button className="btn btn-square btn-ghost">
-                <span className="text-sm">🔥</span>
+                <span className="text-xl">🔥</span>
               </button>
-              <span className="text-sm font-bold mt-3">OnFire dAppStaking</span>
             </div>
           </Link>
         </div>
