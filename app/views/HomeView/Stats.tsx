@@ -8,16 +8,14 @@ type HomeStatsData = {
 
 export const Stats: VFC<{ statsData: HomeStatsData }> = ({ statsData }) => {
   return (
-    <div className="stats stats-vertical lg:stats-horizontal">
+    <div className="stats text-primary-content stats-vertical lg:stats-horizontal bg-gradient-to-r from-secondary to-primary mt-4 ">
       <div className="stat">
         <div className="stat-title">Total dAppStaking Reward</div>
         <div className="stat-value  tabular-nums">
           {/* [TMP] Apply one-third to total rewards #2 */}
-          {(
-            Math.round((Number(statsData.totalRewards) / 3) * 100) / 100
-          ).toLocaleString()}{" "}
-          ASTR
+          {Math.floor(Number(statsData.totalRewards) / 3).toLocaleString()}
         </div>
+        <div className="stat-title">$ASTR</div>
       </div>
 
       <div className="stat">
