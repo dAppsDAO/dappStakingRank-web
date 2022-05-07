@@ -19,9 +19,9 @@ export const Header: FC = () => {
           <Link to="/">
             <div className="flex-1">
               <button className="btn btn-square btn-ghost">
-                <span className="text-xl">🔥</span>
+                <span className="text-sm">🔥</span>
               </button>
-              <span className="text-lg font-bold mt-3">OnFire dAppStaking</span>
+              <span className="text-sm font-bold mt-3">OnFire dAppStaking</span>
             </div>
           </Link>
         </div>

@@ -2968,12 +2968,12 @@ html {
   width: 2rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-4 {
   width: 1rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-60 {
