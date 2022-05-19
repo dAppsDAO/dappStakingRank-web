@@ -6,6 +6,18 @@ export type dAppType = {
 
 export const dApps: dAppType[] = [
   {
+    address: "0xabf7230e022c9146df9b4dbed97e73cf61d612b8",
+    name: "Bware Labs",
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/astarnetwork-a4924.appspot.com/o/astar-dapps%2F0xAbF7230E022C9146DF9B4dBeD97e73CF61D612B8_BWARE%20icon_yellow_gradient-01.png?alt=media&token=56c4aebf-dac6-4fdc-b56c-4e234df20c3b",
+  },
+  {
+    address: "0xa0e232d596d6838d39ddde9b63916b42246be15e",
+    name: "SushiTop",
+    imageURL:
+      "https://firebasestorage.googleapis.com/v0/b/astarnetwork-a4924.appspot.com/o/astar-dapps%2F0xA0e232D596d6838d39DdDE9b63916B42246BE15e_logo1.png?alt=media&token=ec4c6078-b899-4a6a-a066-e5b9f1471deb",
+  },
+  {
     address: "0xcdb32eed99aa19d39e5d6ec45ba74dc4afec549f",
     name: "Orcus Finance",
     imageURL:
